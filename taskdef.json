@@ -1,7 +1,7 @@
 {
   "containerDefinitions": [
     {
-      "name": "TASK_FAMILY",
+      "name": "nginx-example",
       "image": "REPOSITORY_URI:IMAGE_TAG",
       "portMappings": [
         {
@@ -11,21 +11,21 @@
       ],
       "essential": true,
       "dockerLabels": {
-        "name": "TASK_FAMILY"
+        "name": "nginx-example"
       },
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "/ecs/TASK_FAMILY",
+          "awslogs-group": "/ecs/nginx-example",
           "awslogs-region": "AWS_REGION",
-          "awslogs-stream-prefix": "TASK_FAMILY"
+          "awslogs-stream-prefix": "nginx-example"
         }
       }
     }
   ],
   "taskRoleArn": "TASK_EXECUTION_ARN",
   "executionRoleArn": "TASK_EXECUTION_ARN",
-  "family": "TASK_FAMILY",
+  "family": "nginx-example",
   "networkMode": "awsvpc",
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "256",

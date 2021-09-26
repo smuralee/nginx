@@ -27,10 +27,6 @@ phases:
       - sed -i 's@AWS_REGION@'$AWS_REGION'@g' taskdef.json
       - echo update the roles in task definition...
       - sed -i 's@TASK_EXECUTION_ARN@'$TASK_EXECUTION_ARN'@g' taskdef.json
-      - echo update the task family name in task definition...
-      - sed -i 's@TASK_FAMILY@'$TASK_FAMILY'@g' taskdef.json
-      - echo update the container name in appspec.yaml...
-      - sed -i 's@TASK_FAMILY@'$TASK_FAMILY'@g' appspec.yaml
 artifacts:
   files:
     - "appspec.yaml"
